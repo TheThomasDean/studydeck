@@ -1,0 +1,28 @@
+appId: com.studydeck.app
+productName: StudyDeck
+directories:
+  buildResources: build
+  output: release
+files:
+  - out/**/*
+  - package.json
+asarUnpack: []
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  artifactName: StudyDeck-Setup-${version}.${ext}
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+mac:
+  target:
+    - target: dmg
+      arch: [x64, arm64]
+  category: public.app-category.education
+  artifactName: StudyDeck-${version}-${arch}.${ext}
+linux:
+  target: [AppImage]
+  category: Education
+publish: null
